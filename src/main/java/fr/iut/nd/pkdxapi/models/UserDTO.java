@@ -1,22 +1,20 @@
 package fr.iut.nd.pkdxapi.models;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.TypeAlias;
-import org.springframework.data.mongodb.core.mapping.Document;
+import java.util.Optional;
 
-@Document("User")
-@TypeAlias("UserData")
-public class UserData {
-    @Id
+import org.springframework.data.annotation.TypeAlias;
+
+@TypeAlias("UserDTO")
+public class UserDTO {
+    
     private String login;
     private String password;
     private boolean isAdmin;
 
-
-    public UserData(String login, String password, boolean isAdmin) {
+    public UserDTO(String login, String password, Optional<Boolean> isAdmin) {
         this.login = login;
         this.password = password;
-        this.isAdmin = isAdmin;
+        this.isAdmin = isAdmin.orElse(false);
     }
 
     public String getLogin() {
