@@ -5,8 +5,11 @@ import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.iut.nd.pkdxapi.models.Pkmn;
+import fr.iut.nd.pkdxapi.models.PkmnData;
 import fr.iut.nd.pkdxapi.services.PkmnService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,8 +30,9 @@ public class PkmnController {
     }
 
     @PostMapping()
-    public String postMethodName(@RequestBody String entity) {
-        return "oui";
+    public ResponseEntity<String> addPkmn(@RequestPart Pkmn pkmnInputData) {
+        service.addPkmn(pkmnInputData);
+        return ResponseEntity.ok("Pkmn added successfully");
     }
     
 
