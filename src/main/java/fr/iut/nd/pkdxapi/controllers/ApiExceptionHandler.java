@@ -7,7 +7,6 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import fr.iut.nd.pkdxapi.errors.APIException;
-import fr.iut.nd.pkdxapi.errors.UserAlreadyExistException;
 
 import org.springframework.http.HttpHeaders;
 
