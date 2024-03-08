@@ -23,6 +23,8 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests((authorizeRequests) -> authorizeRequests                
     .requestMatchers("/users/register").permitAll()
+    .requestMatchers(HttpMethod.DELETE, "/pkmn/**", "/pkmn").hasAuthority("ROLE_ADMIN")
+    .requestMatchers(HttpMethod.PUT, "/pkmn").hasAuthority("ROLE_ADMIN")
     .requestMatchers("/**").authenticated()
 		)                    
 		.httpBasic(Customizer.withDefaults()).csrf(csrf->csrf.disable()) ;

@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import fr.iut.nd.pkdxapi.errors.UnauthorizedException;
 import fr.iut.nd.pkdxapi.errors.UserAlreadyExistException;
-import fr.iut.nd.pkdxapi.errors.UserNotFound;
 import fr.iut.nd.pkdxapi.models.UserDTO;
 import fr.iut.nd.pkdxapi.models.UserData;
 import fr.iut.nd.pkdxapi.repositories.UserRepository;

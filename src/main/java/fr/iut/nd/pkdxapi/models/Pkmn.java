@@ -7,19 +7,19 @@ import org.springframework.data.annotation.TypeAlias;
 @TypeAlias("Pkmn")
 public class Pkmn {
 
-    private String name;
-    private String description;
-    private String imgUrl;
-    private List<PkmnType> PkmnType;
-    private List<PkmnRegion> PkmnRegion;
+    protected String name;
+    protected String description;
+    protected String imgUrl;
+    protected List<PkmnType> types;
+    protected List<PkmnRegion> regions;
 
 
-    public Pkmn(String name, String description, String imgUrl, List<PkmnType> PkmnType, List<PkmnRegion> PkmnRegion) {
+    public Pkmn(String name, String description, String imgUrl, List<PkmnType> types, List<PkmnRegion> regions) {
         this.name = name;
         this.description = description;
         this.imgUrl = imgUrl;
-        this.PkmnType = PkmnType;
-        this.PkmnRegion = PkmnRegion;
+        this.types = types;
+        this.regions = regions;
     }
 
     public String getName() {
@@ -35,11 +35,11 @@ public class Pkmn {
     }
 
     public List<PkmnType> getPkmnType() {
-        return PkmnType;
+        return types;
     }
 
     public List<PkmnRegion> getPkmnRegions() {
-        return PkmnRegion;
+        return regions;
     }
 
 

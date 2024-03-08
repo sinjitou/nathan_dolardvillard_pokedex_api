@@ -1,25 +1,24 @@
 package fr.iut.nd.pkdxapi.models;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.TypeAlias;
 
 @TypeAlias("PkmnRegion")
 public class PkmnRegion {
     private String regionName;
-    private Integer regionNumber;
+    private Integer regionPokedexNumber;
 
 
-    public PkmnRegion(String regionName, Integer regionNumber) {
+    public PkmnRegion(String regionName, Integer regionPokedexNumber) {
         this.regionName = regionName;
-        this.regionNumber = regionNumber;
+        this.regionPokedexNumber = regionPokedexNumber;
     }
 
     public String getRegionName() {
         return regionName;
     }
 
-    public Integer getRegionNumber() {
-        return regionNumber;
+    public Integer getRegionPokedexNumber() {
+        return regionPokedexNumber;
     }
 
     
